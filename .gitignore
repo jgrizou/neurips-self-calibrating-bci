@@ -5,7 +5,14 @@ participant_mapping.txt
 .ipynb_checkpoints
 __pycache__
 
-# GAN checkpoint copies (canonical version in /checkpoints/)
+# Large files downloaded from Hugging Face
+/checkpoints/
+/src/analysis/final_dfs/
+/src/analysis/plots/faces/*.eps
+/src/analysis/plots/faces/*.png
+/src/analysis/plots/faces/*.svg
+
+# GAN checkpoint copies
 /src/user_experiments/checkpoints/
 /src/analysis/plots/optim/checkpoints/
 /src/analysis/plots/faces/checkpoints/

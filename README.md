@@ -1,6 +1,23 @@
 # neurips-self-calibrating-bci
 Code, data, ad website associated the NeurIPS 2025 paper: Self-Calibrating BCIs: Ranking and Recovery of Mental Targets Without Labels
 
+## Large Files
+
+Large data files (GAN checkpoints, analysis results, plots) are hosted on **Hugging Face Hub** and automatically downloaded when you run the setup script.
+
+**After cloning this repository, run:**
+
+```bash
+python scripts/download_data.py
+```
+
+This will download:
+- GAN checkpoint: `checkpoints/pggan_celebahq1024.pth` (264MB)
+- Analysis results: `src/analysis/final_dfs/*.parquet` (up to 124MB each)
+- Plot files: `src/analysis/plots/faces/*.eps`, `*.png`, `*.svg`
+
+**Note:** If you encounter issues downloading files, please contact jonathan.grizou@grizai.com to obtain the data files directly.
+
 ## Data
 
 All experimental data are stored in `src/data/all_data_sorted.npz`, containing:
