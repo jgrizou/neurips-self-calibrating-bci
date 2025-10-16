@@ -1,1 +1,11 @@
 .condaauto
+.DS_Store
+/src/experiments
+participant_mapping.txt
+.ipynb_checkpoints
+__pycache__
+
+# GAN checkpoint copies (canonical version in /checkpoints/)
+/src/user_experiments/checkpoints/
+/src/analysis/plots/optim/checkpoints/
+/src/analysis/plots/faces/checkpoints/
