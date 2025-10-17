@@ -1,5 +1,19 @@
 # neurips-self-calibrating-bci
-Code, data, ad website associated the NeurIPS 2025 paper: Self-Calibrating BCIs: Ranking and Recovery of Mental Targets Without Labels
+Code, data, and website associated the NeurIPS 2025 paper: 
+
+Self-Calibrating BCIs: Ranking and Recovery of Mental Targets Without Labels
+
+```bibtex
+@article{grizou2025self,
+  title={Self-Calibrating BCIs: Ranking and Recovery of Mental Targets Without Labels},
+  author={Grizou, Jonathan and de la Torre-Ortiz, Carlos and Ruotsalo, Tuukka},
+  journal={Advances in Neural Information Processing Systems},
+  volume={},
+  pages={},
+  year={2025}
+}
+```
+
 
 ## Large Files
 
