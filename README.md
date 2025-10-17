@@ -3,9 +3,7 @@ Code, data, ad website associated the NeurIPS 2025 paper: Self-Calibrating BCIs:
 
 ## Large Files
 
-Large data files (GAN checkpoints, analysis results, plots) are hosted on **Hugging Face Hub** and automatically downloaded when you run the setup script.
-
-**After cloning this repository, run:**
+We chose to upload most of the files directly to this repository. But some files are too large to be uploaded to GitHub, so we use Hugging Face Hub to host them. Large data files (GAN checkpoints, analysis results, some plots) can be automatically downloaded by running the following script:
 
 ```bash
 python scripts/download_data.py
@@ -16,6 +14,12 @@ This will download:
 - Analysis results: `src/analysis/final_dfs/*.parquet` (up to 124MB each)
 - Plot files: `src/analysis/plots/faces/*.eps`, `*.png`, `*.svg`
 
+**Note**: The GAN model checkpoint is stored in the `checkpoints/` directory to avoid re-downloading from the OneDrive url in case the original endpoint stops functioning in the future. In case you run into this issue, run the setup script to copy it to all required locations:
+
+```bash
+./scripts/setup_checkpoints.sh
+```
+
 **Note:** If you encounter issues downloading files, please contact jonathan.grizou@grizai.com to obtain the data files directly.
 
 ## Data
@@ -25,12 +29,6 @@ All experimental data are stored in `src/data/all_data_sorted.npz`, containing:
 - `observed_faces`: Observed face representations (9234 samples, 512 dimensions)
 - `eeg_raw`: Windowed EEG signals (9234 samples, 203 features from 29 channels × 7 time windows)
 - `eeg_net`: EEG features from neural network (9234 samples, 176 features)
-
-**Note**: The GAN model checkpoint is stored in the `checkpoints/` directory to avoid re-downloading from OneDrive in case the original endpoint stops functioning in the future. Run the setup script to copy it to all required locations:
-
-```bash
-./scripts/setup_checkpoints.sh
-```
 
 ## Getting Started
 
@@ -107,16 +105,6 @@ python app.py
 ```
 
 Participant results are saved to the `results/` folder. Face stimuli can be generated using `generate_experiment_faces.ipynb`, but precomputed pairs of faces for the experiments are provided in the `static/` folder for convenience.
-
-## Running on a Cluster
-
-For parallel execution on a cluster, use the `-N` parameter to specify which thread/job to run:
-
-```bash
-python src/run_experiments.py -N 0
-```
-
-You'll need to uncomment the thread-specific code in `run_experiments.py` (lines 69-73) to enable job distribution across cluster nodes.
 
 ## Analysis
 
