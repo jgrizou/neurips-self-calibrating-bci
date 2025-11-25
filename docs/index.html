@@ -309,10 +309,11 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+      <!--video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
         <!-- TODO: Add your video file path here -->
-        <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
+        <!--source src="static/videos/banner_video.mp4" type="video/mp4"-->
+      <!--</video>-->
+      <img src="static/images/teaser.webp" alt="CURSOR framework overview" loading="lazy" style="width: 100%; height: auto;"/>
       <!-- TODO: Replace with your video description -->
       <h2 class="subtitle has-text-centered">
         CURSOR learns to recover mental targets (face images) from EEG responses without any labels or pre-trained decoders. Our self-calibrating approach ranks and generates faces matching what participants have in mind.
@@ -348,33 +349,26 @@
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="CURSOR framework overview" loading="lazy"/>
+        <img src="static/images/human-experiments.webp" alt="CURSOR framework overview" loading="lazy"/>
         <!-- TODO: Replace with description of this result -->
         <h2 class="subtitle has-text-centered">
-          CURSOR framework: Self-calibrating BCI system that recovers mental targets from unlabeled EEG responses.
+          (Left) CURSOR and human scores correlate strongly with similarity. [Blue] Predicted scores (S) against ground truth similarity (d). [Pink] Human-assigned scores to sets of 10 facial images morphing away from the target [right axis]. (Right) Faces at a distance below 1.6 suggest perceptual indistinguishability to the target. The vertical dotted lines show ranking and optimization performance, both recovering faces indistinguishable from the target.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Face generation results" loading="lazy"/>
+        <img src="static/images/correlation_rank_distance.webp" alt="Face generation results" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-          Generated faces matching participants' mental targets using CURSOR algorithm.
+          Rank-related performance for different estimators and data sizes. (Left) Correlation coefficient (R) between scores and ground-truth distances. (Middle) Target rank out of 60.  (Right) Euclidean distance to the target for top ranked candidate. The bottom dotted line is theoretical random performance.  With LR rankings, human subjects could barely distinguish top-ranked faces from the target face.
         </h2>
       </div>
       <div class="item">
         <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="EEG data visualization" loading="lazy"/>
+        <img src="static/images/optimization.webp" alt="EEG data visualization" loading="lazy"/>
         <h2 class="subtitle has-text-centered">
-          EEG response patterns recorded while participants viewed face stimuli (N=29, n=9234 samples).
+          (Left) Optimization converges to distance below 1 from the target. Candidates distance (d) to the target against iteration number. We can recover near-target faces even when near-target stimuli are absent in the dataset. Best candidates found after 1000 iterations shown against ablation distances ('d removed') around the target. (Right) Top-ranked (middle) and optimized (right) images per estimators from one randomly selected run and four randomly selected target faces (left). Images from CURSOR using Linear Regression (LR) are indistinguishable from the target image, while controls S-LR and Dummy exhibit visual differences.
        </h2>
      </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Ranking performance results" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        CURSOR successfully ranks stimuli against unknown mental targets without labels.
-      </h2>
-    </div>
   </div>
 </div>
 </div>
@@ -382,65 +376,12 @@
 <!-- End image carousel -->
 
 
-
-
 <!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <!-- End youtube video -->
 
 
 <!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 <!-- End video carousel -->
-
-
-
-
 
 
 <!-- Paper poster -->
@@ -450,8 +391,8 @@
       <h2 class="title">Poster</h2>
 
       <!-- TODO: Replace with your poster PDF -->
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
+      <iframe  src="static/pdfs/poster.pdf" width="100%" height="550">
+          </iframe> 
         
       </div>
     </div>
