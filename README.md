@@ -1,7 +1,6 @@
-# neurips-self-calibrating-bci
-Code, data, and website associated the NeurIPS 2025 paper: 
+# Self-Calibrating BCIs: Ranking and Recovery of Mental Targets Without Labels
 
-Self-Calibrating BCIs: Ranking and Recovery of Mental Targets Without Labels
+Code, data, and website associated the NeurIPS 2025 paper:
 
 ```bibtex
 @article{grizou2025self,
@@ -14,16 +13,18 @@ Self-Calibrating BCIs: Ranking and Recovery of Mental Targets Without Labels
 }
 ```
 
+## Dataset & Large Files
 
-## Large Files
+We chose to upload most of the files directly to this repository. However, some files are too large to be uploaded to GitHub, so we use Hugging Face (HF) Hub to host them (https://huggingface.co/datasets/ctorre/self-calibrating-bci). If the environmental variable `USE_HUGGINGFACE` is true, it will attempt to download the dataset from HF.
 
-We chose to upload most of the files directly to this repository. But some files are too large to be uploaded to GitHub, so we use Hugging Face Hub to host them. Large data files (GAN checkpoints, analysis results, some plots) can be automatically downloaded by running the following script:
+Large data files (GAN checkpoints, analysis results, some plots) can be automatically downloaded by running the following script:
 
 ```bash
 python scripts/download_data.py
 ```
 
 This will download:
+
 - GAN checkpoint: `checkpoints/pggan_celebahq1024.pth` (264MB)
 - Analysis results: `src/analysis/final_dfs/*.parquet` (up to 124MB each)
 - Plot files: `src/analysis/plots/faces/*.eps`, `*.png`, `*.svg`
@@ -39,6 +40,7 @@ This will download:
 ## Data
 
 All experimental data are stored in `src/data/all_data_sorted.npz`, containing:
+
 - `target_faces`: Target face representations (9234 samples, 512 dimensions)
 - `observed_faces`: Observed face representations (9234 samples, 512 dimensions)
 - `eeg_raw`: Windowed EEG signals (9234 samples, 203 features from 29 channels × 7 time windows)
@@ -56,11 +58,13 @@ conda activate sc-bci
 ### 2. Install dependencies
 
 Install conda packages:
+
 ```bash
 conda install --file conda_requirements.txt
 ```
 
 Install pip packages:
+
 ```bash
 pip install -r pip_requirements.txt
 ```

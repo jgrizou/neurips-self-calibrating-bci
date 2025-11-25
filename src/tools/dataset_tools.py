@@ -8,12 +8,36 @@ import inspect
 HERE_PATH = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
 _DATA_FILE = os.path.join(HERE_PATH, "../data/all_data_sorted.npz")
 
-data = np.load(_DATA_FILE)
+# Load data from HuggingFace instead of local npz file
+USE_HUGGINGFACE = os.environ.get('USE_HUGGINGFACE', 'true').lower() == 'true'
 
-target_faces = data['target_faces']
-observed_faces = data['observed_faces']
-eeg_raw = data['eeg_raw']
-eeg_net = data['eeg_net']
+if USE_HUGGINGFACE:
+    print("Loading data from HuggingFace dataset...")
+    from datasets import load_dataset
+    
+    dataset = load_dataset("ctorre/self-calibrating-bci", split="train")
+    
+    # Convert to numpy arrays
+    target_faces = np.array(dataset['target_faces'])
+    observed_faces = np.array(dataset['observed_faces'])
+    eeg_net = np.array(dataset['eeg_net'])
+    
+    # Note: eeg_raw is not available in the HuggingFace dataset
+    # It only contains the processed eeg_net features
+    eeg_raw = None
+    
+    print("Loaded data shapes:")
+    print(f"  target_faces: {target_faces.shape}")
+    print(f"  observed_faces: {observed_faces.shape}")
+    print(f"  eeg_net: {eeg_net.shape}")
+    
+else:
+    print("Loading data from local npz file...")
+    data = np.load(_DATA_FILE)
+    target_faces = data['target_faces']
+    observed_faces = data['observed_faces']
+    eeg_raw = data['eeg_raw']
+    eeg_net = data['eeg_net']
 
 unique_targets = np.unique(target_faces, axis=0)
 
@@ -21,7 +45,6 @@ unique_targets = np.unique(target_faces, axis=0)
 def get_debiased_dataset(eeg_data):
     euclideans =  [distance.euclidean(row1, row2) for row1, row2 in zip(observed_faces, target_faces)]
     e = np.array(euclideans)
-    n_points_per_bins = 145
     bins = np.arange(0, 47, 1.5)
 
     samples_ids = []
