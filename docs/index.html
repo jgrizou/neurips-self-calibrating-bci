@@ -78,9 +78,11 @@
   <title>Self-Calibrating BCIs - Grizou, de la Torre-Ortiz, Ruotsalo | NeurIPS 2025</title>
   
   <!-- Favicon and App Icons -->
-  <!--link rel="icon" type="image/x-icon" href="static/images/favicon.ico"-->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="static/images/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="static/images/apple-touch-icon.png">
   
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -196,8 +198,7 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown - DISABLED -->
-  <!--
+  <!-- More Works Dropdown -->
   <div class="more-works-container">
     <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
       <i class="fas fa-flask"></i>
@@ -206,24 +207,71 @@
     </button>
     <div class="more-works-dropdown" id="moreWorksDropdown">
       <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
+        <h4>More from the authors</h4>
         <button class="close-btn" onclick="toggleMoreWorks()">
           <i class="fas fa-times"></i>
         </button>
       </div>
-      <div class="works-list">
-        <a href="https://arxiv.org/abs/2506.11151" class="work-item" target="_blank">
+        <a href="https://arxiv.org/pdf/2212.05766" class="work-item" target="_blank">
           <div class="work-info">
-            <h5>Self-Calibrating BCIs: Ranking and Recovery of Mental Targets Without Labels</h5>
-            <p>First self-calibrating BCI framework for continuous domains using the CURSOR algorithm.</p>
-            <span class="work-venue">NeurIPS 2025</span>
+            <h5>Interactive introduction to self-calibrating interfaces</h5>
+            <p>Comprehensive introduction to self-calibrating interface design and methodology.</p>
+            <span class="work-venue">arXiv 2022</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://doi.org/10.1145/3664647.3685508" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Perceptual Visual Similarity from EEG: Prediction and Image Generation</h5>
+            <p>Using EEG signals to predict perceptual visual similarity and generate images matching brain activity patterns.</p>
+            <span class="work-venue">ACM Multimedia 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://doi.org/10.1111/psyp.14225" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>The P3 indexes the distance between perceived and target image</h5>
+            <p>Investigating how the P3 event-related potential reflects the perceptual distance between viewed and target images.</p>
+            <span class="work-venue">Psychophysiology 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+
+        <a href="https://doi.org/10.1371/journal.pone.0131491" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Exploiting task constraints for self-calibrated brain-machine interface control using error-related potentials</h5>
+            <p>Self-calibrating BCI control leveraging error-related potentials and task constraints.</p>
+            <span class="work-venue">PLOS ONE 2015</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://hal.science/hal-01007689v1/file/grizou2014interactive.pdf" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Interactive Learning from Unlabeled Instructions</h5>
+            <p>Framework for learning from unlabeled human instructions through interactive engagement.</p>
+            <span class="work-venue">UAI 2014</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/pdf/2407.02269" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>IFTT-PIN: A Self-Calibrating PIN-Entry Method</h5>
+            <p>Novel self-calibrating approach for secure PIN entry without explicit calibration phase.</p>
+            <span class="work-venue">arXiv 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://hal.science/hal-00850703/document" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Robot learning simultaneously a task and how to interpret human instructions</h5>
+            <p>Robots learning tasks while simultaneously learning to interpret unlabeled human instructions.</p>
+            <span class="work-venue">IEEE ICDL 2013</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
         </a>
       </div>
     </div>
   </div>
-  -->
 
   <main id="main-content">
   <section class="hero">
